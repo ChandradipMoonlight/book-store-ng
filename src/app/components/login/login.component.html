@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm">
+    <div class="fields" fxLayout="column">
+
+        <!-- User Email Id -->
+        <span>Email Id</span>
+        <mat-form-field appearance="outline" class="form-field">
+            <input matInput placeholder="Your Email Id" formControlName="email">
+        </mat-form-field>
+
+        <!-- User Password -->
+        <span>Password</span>
+        <mat-form-field appearance="outline" class="form-field">
+            <input matInput formControlName="password" [type]="show ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="show = !show">{{show ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+
+        <span class="forget-password-text" routerLink="/forget-password">Forget Password?</span>
+    </div>
+    <div>
+        <button class="login-button" mat-flat-button (click)="onSubmit()">Login</button>
+    </div>
+</form>
+<div class="below-container">
+    <div class="or-text" fxLayout="row" fxLayoutAlign="center center">
+        OR
+    </div>
+    <div class="ol-buttons">
+        <button class="fb-button" mat-raised-button color="primary">Facebook</button>
+        <button class="g-button" mat-raised-button>Google</button>
+    </div>

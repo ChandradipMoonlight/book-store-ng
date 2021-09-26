@@ -1,0 +1,25 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center center">
+    <div class="woman-image" fxHide.xs fxHide.sm>
+        <img src="../../../assets/2766594.png" alt="">
+        <h2>ONLINE BOOK SHOPPING</h2>
+    </div>
+
+    <div class="inner-container" fxLayout="column">
+        <div class="choice" fxLayout="row" fxLayoutAlign="space-evenly center">
+            <div class="login" fxLayout="column" (click)=onLogin()>
+                <div class="login-underline">
+                    <h1 [ngClass]="{'heading-color':signUpVisibility===true}">LOGIN</h1>
+                    <div [ngClass]="{'underline':signUpVisibility===false}"></div>
+                </div>
+            </div>
+
+            <div class="signup" fxLayout="column" (click)=onSignUp()>
+                <div class="signup-underline">
+                    <h1 [ngClass]="{'heading-color':signUpVisibility===false}">SIGNUP</h1>
+                    <div [ngClass]="{'underline':signUpVisibility===true}"></div>
+                </div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

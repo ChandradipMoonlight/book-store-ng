@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+.container {
+    // border: 4px solid red;
+    background-color: rgba($color: #000000, $alpha: 0.31);
+    height: 100%;
+    width: 100%;
+}
+
+.woman-image {
+    background-color: #F5F5F5;
+    padding: 52px 40px 39px 51px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+img {
+    height: 245px;
+    width: 245px;
+    border-radius: 125px;
+}
+
+h1 {
+    font-size: 33px;
+    // border: 1px solid green;
+}
+
+h2 {
+    font-size: 18px;
+    // border: 1px solid red;
+}
+
+.inner-container {
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 15px #00000029;
+    border-radius: 6px;
+    width: 389px;
+    height: 425px;
+}
+
+.choice {
+    cursor: pointer;
+    margin-top: 28px;
+}
+
+.underline {
+    background-color: #A03037;
+    align-self: center;
+    border-radius: 4px;
+    width: 22px;
+    height: 5px;
+    margin-left: 40px;
+}
+
+.heading-color {
+    color: #878787;
+}

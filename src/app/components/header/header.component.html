@@ -1,0 +1,44 @@
+<!-- <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="layout"></div>
+    <div class="layout"></div>
+</div> -->
+
+<div class="header" fxLayout="row">
+    <div class="logo" fxLayoutAlign="space-between center" fxLayoutGap="5.98px">
+        <img class="logo-image" src="../../../assets/education.svg" alt="">
+        <span class="logo-text">Bookstore</span>
+    </div>
+
+    <div class="search-bar" fxLayout="row" fxHide.xs fxHide.sm>
+        <img class="search-image" src="../../../assets/search_black_24dp.svg" alt="">
+        <p>Search...</p>
+    </div>
+
+    <div class="profile-and-cart" fxLayout="row" fxLayoutGap="40px">
+        <div class="profile" fxLayout="column" fxLayoutAlign="center center" (click)=boxPopup()>
+            <img class="p-image p-and-c-image" src="../../../assets/person_outline_white_24dp.svg" alt="">
+            <span>Profile</span>
+        </div>
+        <div class="box-below-profile" *ngIf=profileBox fxLayout="column">
+            <p class="welcome">Welcome</p>
+            <div>
+                <p class="text-below-welcome">To access account and manage orders</p>
+                <button mat-stroked-button color="accent" class="login-button" (click)="Login()">LOGIN/SIGNUP</button>
+            </div>
+            <div class="divider">
+            </div>
+            <div class="my-orders" fxLayout="row">
+                <img class="box" src="../../../assets/markunread_mailbox_black_24dp.svg" alt="">
+                <p class="text-below-divider">My Orders</p>
+            </div>
+            <div class="my-orders" fxLayout="row">
+                <img class="box" src="../../../assets/favorite_border_black_24dp.svg" alt="">
+                <p class="text-below-divider">Wishlist</p>
+            </div>
+        </div>
+        <div class="cart" fxLayout="column" fxLayoutAlign="center center">
+            <img class="p-and-c-image" src="../../../assets/supermarket.svg" alt="">
+            <span>Cart</span>
+        </div>
+    </div>
+</div>
