@@ -1,29 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from './../../environments/environment';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  // constructor(private httpService: HttpService) { }
-  // constructor(private httpClient: HttpClient) { }
+  constructor(private httpService: HttpService) { }
 
-  // private baseUrl = environment.baseUrl;
 
-  // login(data: any)
-  // {
-  //   return this.httpClient.post(this.baseUrl+"login", data);
-  // }
+  login(data: any)
+  {
+    return this.httpService.postService("login", data, null, false);
+  }
 
   // signup(data: any)
   // {
-  //   return this.httpClient.post(this.baseUrl+"signup", data);
+  //   return this.httpService.postService("signup", data, null, false);
   // }
 
   // forget(data: any)
   // {
-  //   return this.httpClient.post(this.baseUrl+"forget-password", data);
+  //   return this.httpService.postService("forget-password", data, null, false);
   // }
 }

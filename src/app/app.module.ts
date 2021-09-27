@@ -12,6 +12,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { UserService } from './services/user.service';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [UserService,
+              HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
