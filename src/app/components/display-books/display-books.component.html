@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="upper-section" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="book-count">
+            <span class="books-text">Books<span class="book-count">({{books.length}}  items)</span></span>
+        </div>
+        <div class="order">
+            <mat-form-field appearance="outline">
+                <select matNativeControl>
+                  <option value="relevence">Sort by relevance</option>
+              </select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="below-section" fxLayoutGap="28px">
+        <div class="books" *ngFor="let book of books">
+            <div class="single-book" fxLayout="column">
+                <div class="book-image" fxLayoutAlign="center center" fxLayoutGap="32px" matTooltip="{{book.bookDescription}}">
+                    <img src="../assets/bookimage/{{book.bookLogo}}" alt="" style="height: 135px; width: 105px;">
+
+                    <div class="out-of-stock " *ngIf="!book.bookQuantity ">Out Of stock</div>
+
+                </div>
+                <div class=" book-info " fxLayout="column " fxLayoutGap="6px ">
+                    <div class="book-name ">
+                        <span>{{book.bookName}}</span>
+                        <p>by {{book.bookAuthor}}</p>
+                    </div>
+                    <div class="rating " fxLayout="row " fxLayoutAlign="start center ">
+                        <div class="star " fxLayout="row " fxLayoutAlign="center center ">
+                            <p class="rating-star ">{{book.rating}}</p>
+                            <img class="star-image " src="../../../assets/star_white_24dp.svg " alt=" ">
+                        </div>
+                        <div class="people ">
+                            <p>(20)</p>
+                        </div>
+                    </div>
+                    <div class="price-section " fxLayout="row " fxLayoutGap="5px ">
+                        <h4>RS. {{book.bookPrice}}</h4>
+                        <del>
+                          <p>RS. 2000</p>
+                      </del>
+
+                    </div>
+                    <div class="buttons " fxLayout="row " fxLayoutAlign="center center " fxLayoutGap="15px " *ngIf="!bookIntoCart">
+                        <button class="add-to-cart-button " (click)="addToCart(book)" #clickState mat-button>ADD TO BAG</button>
+                        <button class="wishlist-button ">WISHLIST</button>
+
+                    </div>
+                    <div class="buttons " *ngIf="bookIntoCart">
+                        <button class="sigle-button ">ADDED TO BAG</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

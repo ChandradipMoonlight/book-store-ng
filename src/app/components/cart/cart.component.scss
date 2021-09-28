@@ -1,0 +1,151 @@
+.container {
+    margin: 19px 235px 0px 235px;
+}
+
+.book-section {
+    width: 774px;
+    // height: 251px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid rgba($color: #707070, $alpha: 0.24);
+    border-radius: 1px;
+    margin-top: 17px;
+}
+
+.number-address,
+.book-in-cart {
+    margin-left: 36px;
+    margin-top: 18px;
+}
+
+.button-remove {
+    margin-top: 7px;
+    margin-left: 102px;
+}
+
+// .single-book {
+// width: 774px;
+// height: 251px;
+// background: #FFFFFF 0% 0% no-repeat padding-box;
+// border: 1px solid rgba($color: #707070, $alpha: 0.24);
+// border-radius: 1px;
+// }
+// .book-info{
+//     margin-left: 38px;
+// }
+.book-image {
+    width: 65px;
+    height: 85px;
+    margin-top: 4px;
+}
+
+.home {
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    cursor: pointer;
+}
+
+.my-cart {
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+}
+
+.cart-text {
+    text-align: left;
+    font: normal normal medium 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+}
+
+.book-title {
+    text-align: left;
+    font: normal normal normal 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+}
+
+.author-name {
+    text-align: left;
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    margin: 8px 0px 10px 4px;
+}
+
+.book-price {
+    text-align: left;
+    font: normal normal bold 15px/18px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    margin-left: 4px;
+}
+
+.cut-price {
+    text-align: left;
+    font: normal normal normal 9px/11px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+
+::ng-deep.mat-button-wrapper {
+    text-align: left;
+    font: normal normal normal 12px/15px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+}
+
+.img-button3 {
+    width: 99px;
+    height: 24px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.middle-div {
+    width: 41px;
+    height: 24px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.decrease-count {
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    opacity: 0.4;
+}
+
+.increase-count {
+    width: 24px;
+    height: 24px;
+    border-radius: 100px;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    opacity: 0.4;
+}
+
+.bottom-button {
+    width: 151px;
+    height: 35px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    border: none;
+    margin-left: 589px;
+    margin-bottom: 20px;
+}
+
+.place-order-text {
+    text-align: left;
+    font: normal normal medium 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}

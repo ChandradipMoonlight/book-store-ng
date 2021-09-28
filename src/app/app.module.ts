@@ -6,23 +6,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { SlideComponent } from './components/slide/slide.component';
-import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { UserService } from './services/user.service';
-import { HttpService } from './services/http.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisplayBooksComponent } from './components/display-books/display-books.component';
+// import { BookComponent } from './components/book/book.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SlideComponent,
-    HomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    FooterComponent,
+    DashboardComponent,
+    DisplayBooksComponent,
+    // BookComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +37,10 @@ import { HttpService } from './services/http.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
-  providers: [UserService,
-              HttpService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

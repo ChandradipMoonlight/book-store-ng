@@ -36,9 +36,17 @@
                 <p class="text-below-divider">Wishlist</p>
             </div>
         </div>
-        <div class="cart" fxLayout="column" fxLayoutAlign="center center">
+        <!-- <div class="cart" fxLayout="column" fxLayoutAlign="center center">
             <img class="p-and-c-image" src="../../../assets/supermarket.svg" alt="">
             <span>Cart</span>
+        </div> -->
+
+        <!-- Shooping cart -->
+        <div class="cart" align="center">
+            <span style="color: #fff; font-size: small;">Cart</span>
+            <button mat-icon-button routerLink="cart" matTooltip="Cart">
+                  <mat-icon matBadge="{{ length }}" matBadgeSize="small">add_shopping_cart</mat-icon>
+             </button>
         </div>
     </div>
 </div>

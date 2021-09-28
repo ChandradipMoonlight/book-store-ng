@@ -13,6 +13,7 @@ export class SlideComponent implements OnInit {
   constructor(private route : Router) { }
 
   ngOnInit(): void {
+    this.route.navigateByUrl("login");
   }
 
   onSignUp() {

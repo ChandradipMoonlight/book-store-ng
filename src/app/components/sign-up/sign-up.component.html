@@ -1,10 +1,14 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm">
     <div class="fields" fxLayout="column">
 
         <!-- User full Name -->
         <span>Full Name</span>
         <mat-form-field appearance="outline" class="form-field">
             <input matInput placeholder="Your full Name" formControlName="fullName">
+            <div *ngIf="submitted" class="invalid-feedback">
+                <mat-error *ngIf="checkError('fullName', 'required')">Enter full name</mat-error>
+                <mat-error *ngIf="checkError('name', 'pattern')">First name Should be uppercase and should have min 3 char</mat-error>
+            </div>
         </mat-form-field>
 
         <!-- User Email Id -->
