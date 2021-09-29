@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Host, HostListener, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
@@ -12,9 +12,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent implements OnInit {
   
   profileBox: boolean = false;
-
+  navbarfixed: boolean = false;
   length: any;
   isLogin = false;
+  cart: any;
 
   
   constructor( private service: BookService,
@@ -24,8 +25,10 @@ export class HeaderComponent implements OnInit {
 ) { }
 
 
-
   ngOnInit(): void  {
+
+      this.displayCartBooks();
+
   }
 
   boxPopup() {
@@ -36,10 +39,20 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['login']);
   }
 
-  // getCartItemCount() {
-  //   this.cartService.getCartItemCount().subscribe((response: any) => {
-  //     this.length = response.obj;
-  //     console.log('total number of itemes are' + response.obj);
-  //    });
-  // }
+  @HostListener('window:scroll', ['$event']) onScroll() {
+    if (window.scrollY > 100) {
+      this.navbarfixed = true;
+    }else {
+      this.navbarfixed = false;
+    }
+  }
+
+  displayCartBooks() {
+    
+    this.cartService.getCartItemsForUser().subscribe((response: any) => {
+      console.log(response)
+      this.cart = response.data;
+    });
+  }
+
 }

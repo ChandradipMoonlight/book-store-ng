@@ -123,3 +123,32 @@ span {
     margin-top: 2px;
     color: #878787;
 }
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    transition: 0.2ms linear;
+    top: 0px;
+}
+
+.not-fixed {
+    position: static;
+    transition: 00.2ms;
+    top: 50px;
+}
+
+.badge-num {
+    width: 18px;
+    height: 18px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    font: normal normal bold 11px/15px Lato;
+    letter-spacing: 0px;
+    color: #a5110ce0;
+    opacity: 1;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 13px;
+}

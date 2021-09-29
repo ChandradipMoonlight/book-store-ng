@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { DisplayBooksComponent } from '../display-books/display-books.component';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { OrderService } from '../../services/order.service';
+import { OrderDetails } from '../../../models/order-details';
 
 @Component({
   selector: 'app-cart',
@@ -15,6 +17,8 @@ export class CartComponent implements OnInit {
 
   cart: any;
   cartId: any;
+  data: any;
+  public orderDetails: OrderDetails = new OrderDetails;
 
   books=[];
   isShow: boolean = false;
@@ -22,7 +26,8 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService,
               private route: Router,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private orderService: OrderService) {
       this.customerFormGroup = this.formBuilder.group({
         fullName: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-z\\s]{2,}$")]),
         mobileNumber: new FormControl('', [Validators.required, Validators.pattern("^[6-9][0-9]{9}$")]),
@@ -41,13 +46,11 @@ export class CartComponent implements OnInit {
 
   
   displayCartBooks() {
-    
     this.cartService.getCartItemsForUser().subscribe((response: any) => {
       console.log(response);
       this.cart = response.data;
       console.log(this.cart.bookModel);
     });
-
   }
 
   removeFromCart(cartId: any) {
@@ -69,4 +72,14 @@ export class CartComponent implements OnInit {
   public checkError = (controlName: string, errorName: string) => {
     return this.customerFormGroup.controls[controlName].hasError(errorName);
   }
+
+  placeOrder() {
+    this.orderDetails = this.customerFormGroup.value;
+    this.orderService.placeOrder(this.orderDetails).subscribe(reponse => {
+      console.log(reponse)
+      this.route.navigateByUrl("order");
+    })
+
+  }
+
 }

@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 export class HttpService {
   
   baseUrl = environment.baseUrl;
-  token: any;
+  token:any= localStorage.getItem('token');
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,6 +17,8 @@ export class HttpService {
     return this.httpClient.post(this.baseUrl + url, data);
   }
 
+
+
     getBooks(url: any) {
       
     return this.httpClient.get(this.baseUrl + url)
@@ -24,22 +26,23 @@ export class HttpService {
 
   addToCart(data: any)
   {
-    this.token = localStorage.getItem('token');
     
     return this.httpClient.post(this.baseUrl + `add-to-cart?token=${this.token}`, data);
   }
 
   removeFromCart(cartId: any)
   {
-    this.token = localStorage.getItem('token');
     
     return this.httpClient.delete(this.baseUrl + `delete-form-cart?token=${this.token}&cartId=${cartId}`);
   }
 
   getCartBooks()
   {
-    this.token = localStorage.getItem('token');
   
     return this.httpClient.get(this.baseUrl + `get-cart-items-for-user?token=${this.token}`);
+  }
+
+  placeOrder(data: any) {
+    return this.httpClient.post(this.baseUrl+`palce-order?token=${this.token}` , data)
   }
 }

@@ -3,7 +3,7 @@
     <div class="layout"></div>
 </div> -->
 
-<div class="header" fxLayout="row">
+<div class="header" fxLayout="row" (scroll)="onScroll()" [ngClass]="navbarfixed?' fixed':'not-fixed'">
     <div class="logo" fxLayoutAlign="space-between center" fxLayoutGap="5.98px">
         <img class="logo-image" src="../../../assets/education.svg" alt="">
         <span class="logo-text">Bookstore</span>
@@ -45,7 +45,7 @@
         <div class="cart" align="center">
             <span style="color: #fff; font-size: small;">Cart</span>
             <button mat-icon-button routerLink="cart" matTooltip="Cart">
-                  <mat-icon matBadge="{{ length }}" matBadgeSize="small">add_shopping_cart</mat-icon>
+                  <mat-icon matBadge="{{cart.length}}" matBadgeSize="small">add_shopping_cart</mat-icon>
              </button>
         </div>
     </div>

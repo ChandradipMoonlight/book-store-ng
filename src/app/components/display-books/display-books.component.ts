@@ -13,6 +13,8 @@ export class DisplayBooksComponent implements OnInit {
   
     books: any;
 
+    cart: any;
+
     value: any = [];
 
     bookIntoCart: boolean = false;
@@ -34,6 +36,7 @@ export class DisplayBooksComponent implements OnInit {
         console.log(response);
         this.books = response.data;
         console.log(this.books);
+        this.displayCartBooks();
       })
     }
 
@@ -44,7 +47,14 @@ export class DisplayBooksComponent implements OnInit {
         this.bookIntoCart = true;
         this.ngOnInit();
       })
+    }
 
+    displayCartBooks() {
+      this.cartService.getCartItemsForUser().subscribe((response: any) => {
+        console.log(response);
+        this.cart = response.data;
+        console.log(this.cart.bookModel);
+      });
     }
   
   }
