@@ -28,7 +28,7 @@
                     <div class="rating " fxLayout="row " fxLayoutAlign="start center ">
                         <div class="star " fxLayout="row " fxLayoutAlign="center center ">
                             <p class="rating-star ">{{book.rating}}</p>
-                            <img class="star-image " src="../../../assets/star_white_24dp.svg " alt=" ">
+                            <img class="star-image " src="../assets/star_white_24dp.svg " alt=" ">
                         </div>
                         <div class="people ">
                             <p>(20)</p>
@@ -41,12 +41,12 @@
                       </del>
 
                     </div>
-                    <div class="buttons " fxLayout="row " fxLayoutAlign="center center " fxLayoutGap="15px " *ngIf="!bookIntoCart">
-                        <button class="add-to-cart-button " (click)="addToCart(book)" #clickState mat-button>ADD TO BAG</button>
+                    <div class="buttons " fxLayout="row " fxLayoutAlign="center center " fxLayoutGap="15px " *ngIf="!book.bookAdded">
+                        <button class="add-to-cart-button" (click)="addToCart(book)" #clickState mat-button>ADD TO BAG</button>
                         <button class="wishlist-button ">WISHLIST</button>
 
                     </div>
-                    <div class="buttons " *ngIf="bookIntoCart">
+                    <div class="buttons " *ngIf="book.bookAdded">
                         <button class="sigle-button ">ADDED TO BAG</button>
                     </div>
 

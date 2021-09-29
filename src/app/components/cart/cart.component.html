@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column">
+<div class="container" fxLayout="column" fxLayoutGap="15px">
     <div class="home-count">
         <span class="home" routerLink="/home">Home /</span><span class="my-cart"> My cart</span>
     </div>
@@ -9,37 +9,118 @@
         </div>
 
         <div class="book-in-cart" *ngFor="let book of cart">
+            <span></span>
             <div class="single-book" fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="38px">
-                <img class="book-image" src={{book.bookImage}} alt="">
+                <img class="book-image" src="../assets/bookimage/{{book.bookModel.bookLogo}}" alt="">
                 <div class="book-info" fxLayout="column" fxLayoutGap="6px">
                     <div class="book-name">
-                        <span class="book-title">{{book.bookTitle}}</span>
-                        <p class="author-name">by {{book.authorName}}</p>
+                        <span class="book-title">{{book.bookModel.bookName}}</span>
+                        <p class="author-name">by {{book.bookModel.bookAuthor}}</p>
                     </div>
                     <div class="price-section" fxLayout="row" fxLayoutGap="11px">
-                        <h4 class="book-price">RS. {{book.price}}</h4>
+                        <h4 class="book-price">RS. {{book.bookModel.bookPrice}}</h4>
                         <del>
-                          <p class="cut-price">RS. 2000</p>
-                      </del>
+                            <p class="cut-price">RS. 2000</p>
+                        </del>
                     </div>
                 </div>
             </div>
             <div class="button-remove" fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="18px">
                 <button class="img-button3" fxLayout="row" fxLayoutAlign=" center">
-                  <div>
-                      <img src="../../../assets/remove_circle_outline_black_24dp.svg" alt="" class="decrease-count">
-                  </div>
-                  <div class="middle-div" fxLayoutAlign="center center">
-                      1
-                  </div>
-                  <div class="increase-count" fxLayoutAlign="center center">
-                      <img src="../../../assets/add_black_24dp.svg" alt="">
-                  </div>
-              </button>
+                    <div>
+                        <img src="../assets/remove_circle_outline_black_24dp.svg" alt="" class="decrease-count">
+                    </div>
+                    <div class="middle-div" fxLayoutAlign="center center">
+                        1
+                    </div>
+                    <div class="increase-count" fxLayoutAlign="center center">
+                        <img src="../assets/add_black_24dp.svg" alt="">
+                    </div>
+                </button>
 
                 <button mat-button class="remove-button" (click)="removeFromCart(book.cartId)">Remove</button>
             </div>
         </div>
         <button class="bottom-button"><span class="place-order-text">PLACE ORDER</span></button>
+    </div>
+
+    <div class="customer-details">
+        <div class="headings" fxLayout="row" fxLayoutAlign="space-between start">
+            <span class="customer-detail-heading">Customer Details</span>
+            <button class="new-address-button"><span class="new-address-text">Add New Address</span></button>
+        </div>
+
+        <div class="address-part" fxLayout="column">
+            <div class="form-fields" fxLayout="row" fxLayoutGap="10px">
+                <div fxLayout="column">
+                    <span class="text-above-form-field">Full Name</span>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="column">
+                    <span class="text-above-form-field">Mobile Number</span>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="radio-button" fxLayoutAlign=" end" fxLayoutGap="20px">
+                <mat-radio-button value="1">1.WORK</mat-radio-button>
+                <span class="edit-button">Edit</span>
+            </div>
+
+            <div class="full-address" fxLayout="column" fxLayoutGap="10px">
+                <div class="main-address" fxLayout="column">
+                    <span class="text-above-form-field">Address</span>
+                    <input class="address-input" type="text">
+                </div>
+                <div class="city-state-fields" fxLayout="row" fxLayoutGap="10px">
+                    <div fxLayout="column">
+                        <span class="text-above-form-field">city/town</span>
+                        <input class="city-state" type="text">
+                    </div>
+
+                    <div fxLayout="column">
+                        <span class="text-above-form-field">State</span>
+                        <input class="city-state" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="address-suggest" fxLayout="column">
+                <mat-radio-button value="1">2.Home</mat-radio-button>
+                <div class="main-address" fxLayout="column">
+                    <span class="text-above-form-field">Address</span>
+                    <input class="suggestion-input" type="text">
+                </div>
+                <button class="continue-button">CONTINUE</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-summary">
+        <div class="summery-text">
+            <span class="order-summery-text customer-detail-heading">Order summery</span>
+        </div>
+        <div class="book-in-cart" *ngFor="let book of cart">
+            <div class="single-book" fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="38px">
+                <img class="book-image" src={{book.bookImage}} alt="">
+                <div class="book-info" fxLayout="column" fxLayoutGap="6px">
+                    <div class="book-name">
+                        <span class="book-title">{{book.bookName}}</span>
+                        <p class="author-name">by {{book.bookAuthor}}</p>
+                    </div>
+                    <div class="price-section" fxLayout="row" fxLayoutGap="11px">
+                        <h4 class="book-price">RS. {{book.bookPrice}}</h4>
+                        <del>
+                            <p class="cut-price">RS. 2000</p>
+                        </del>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="bottom-button"><span class="place-order-text">CHECKOUT</span></button>
     </div>
 </div>

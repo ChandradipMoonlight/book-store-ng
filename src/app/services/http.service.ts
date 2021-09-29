@@ -29,15 +29,11 @@ export class HttpService {
     return this.httpClient.post(this.baseUrl + `add-to-cart?token=${this.token}`, data);
   }
 
-  removeFromCart(data: any)
+  removeFromCart(cartId: any)
   {
     this.token = localStorage.getItem('token');
-    var headerObject = new HttpHeaders().set("Authorization", "Bearer " + this.token);
-    let Options = {
-      headers: headerObject,
-      'Content-Type': 'application/json'
-    }
-    return this.httpClient.delete(this.baseUrl + `Carts?cartId=${data}`, Options);
+    
+    return this.httpClient.delete(this.baseUrl + `delete-form-cart?token=${this.token}&cartId=${cartId}`);
   }
 
   getCartBooks()

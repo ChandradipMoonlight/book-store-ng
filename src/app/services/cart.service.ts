@@ -13,9 +13,9 @@ export class CartService {
     return this.httpService.addToCart( data);
   }
 
-  removeFromCart(data: any)
+  removeFromCart(cartId: any)
   {
-    return this.httpService.removeFromCart(data);
+    return this.httpService.removeFromCart(cartId);
   }
 
   getCartItemsForUser()
