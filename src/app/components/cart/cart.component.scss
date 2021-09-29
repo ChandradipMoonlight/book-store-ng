@@ -94,7 +94,7 @@
     margin-top: 3px;
 }
 
-::ng-deep.mat-button-wrapper {
+ ::ng-deep.mat-button-wrapper {
     text-align: left;
     font: normal normal normal 12px/15px Lato;
     letter-spacing: 0px;
@@ -191,14 +191,14 @@
     color: #A03037;
 }
 
-::ng-deep.mat-form-field-appearance-outline .mat-form-field-flex {
+ ::ng-deep.mat-form-field-appearance-outline .mat-form-field-flex {
     width: 251px;
     height: 45px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     // border: 1px solid #DCDCDC;
 }
 
-::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+ ::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 0px;
 }
 
@@ -220,7 +220,7 @@
     color: #A03037;
 }
 
-::ng-deep.mat-radio-label-content {
+ ::ng-deep.mat-radio-label-content {
     text-align: left;
     // font: normal normal medium 15px/20px Roboto;
     font-size: 15px;
@@ -271,8 +271,10 @@
     background: #3371B5 0% 0% no-repeat padding-box;
     border-radius: 3px;
     border: none;
-    margin: 9px 0px 57px 538px;
+    margin: 0px 10px 57px 538px;
     color: #FFFFFF;
+    margin-bottom: 10px;
+    margin-top: 0px;
 }
 
 .order-summary {
@@ -287,4 +289,17 @@
 .summery-text {
     margin-left: 36px;
     margin-top: 19px;
+}
+
+//  ::ng-deep .mat-form-field {
+//     .mat-input-element {
+//         color: rgb(210, 231, 21);
+//     }
+// }
+// .address-input,
+// textarea {
+//     width: 500px;
+// }
+::ng-deep.textarea.mat-input-element {
+    width: 500px;
 }

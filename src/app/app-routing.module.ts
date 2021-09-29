@@ -6,6 +6,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DisplayBooksComponent } from './components/display-books/display-books.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CartComponent } from './components/cart/cart.component';
+import { OrderComponent } from './components/order/order.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'cart', component: CartComponent }
   ]
 },
+{ path: 'order', component: OrderComponent }
 ];
 
 @NgModule({

@@ -42,6 +42,7 @@ export class DisplayBooksComponent implements OnInit {
       this.cartService.addToCart(data).subscribe((response: any)=> {
         console.log(response);
         this.bookIntoCart = true;
+        this.ngOnInit();
       })
 
     }
