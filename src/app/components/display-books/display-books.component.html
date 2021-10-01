@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="below-section" fxLayoutGap="28px">
-        <div class="books" *ngFor="let book of books">
+        <div class="books" *ngFor="let book of books | filter: searchKey:'title'">
             <div class="single-book" fxLayout="column">
                 <div class="book-image" fxLayoutAlign="center center" fxLayoutGap="32px" matTooltip="{{book.bookDescription}}">
                     <img src="../assets/bookimage/{{book.bookLogo}}" alt="" style="height: 135px; width: 105px;">

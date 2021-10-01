@@ -13,6 +13,8 @@ export class DisplayBooksComponent implements OnInit {
   
     books: any;
 
+    searchKey: string = '';
+
     cart: any;
 
     value: any = [];
@@ -27,6 +29,9 @@ export class DisplayBooksComponent implements OnInit {
     ngOnInit(): void
     {
       this.displayBooks();
+      this.bookService.search.subscribe((val: any) => {
+        this.searchKey = val;
+      })
     }
   
     displayBooks()

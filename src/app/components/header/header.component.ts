@@ -10,7 +10,9 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
+  public searchTerm!: string;
+
   profileBox: boolean = false;
   navbarfixed: boolean = false;
   length: any;
@@ -18,7 +20,7 @@ export class HeaderComponent implements OnInit {
   cart: any;
 
   
-  constructor( private service: BookService,
+  constructor( private bookService: BookService,
     private route: Router,
     private cartService: CartService,
     private matSnackBar: MatSnackBar
@@ -53,6 +55,13 @@ export class HeaderComponent implements OnInit {
       console.log(response)
       this.cart = response.data;
     });
+  }
+
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.bookService.search.next(this.searchTerm);
+
   }
 
 }

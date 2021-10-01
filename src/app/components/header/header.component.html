@@ -9,10 +9,12 @@
         <span class="logo-text">Bookstore</span>
     </div>
 
-    <div class="search-bar" fxLayout="row" fxHide.xs fxHide.sm>
-        <img class="search-image" src="../../../assets/search_black_24dp.svg" alt="">
-        <p>Search...</p>
+    <!-- fxHide.xs fxHide.sm -->
+    <div class="search-bar" fxLayout="row">
+        <input class="form-control" type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Serch books">
+        <img class="search-icon" src="../assets/search_img.png" alt="">
     </div>
+
 
     <div class="profile-and-cart" fxLayout="row" fxLayoutGap="40px">
         <div class="profile" fxLayout="column" fxLayoutAlign="center center" (click)=boxPopup()>

@@ -36,6 +36,11 @@ export class CartComponent implements OnInit {
         address: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-z\\s]{2,}$")]),
         city: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-z\\s]{2,}$")]),
         state: new FormControl('', [Validators.required, Validators.pattern("^[A-Z][a-zA-z\\s]{2,}$")]),
+        addressType: [''],
+        bookId: [''],
+        userId: [''],
+        orderQuantity: [''],
+        orderPrice: [''],
       })
      }
 
@@ -74,12 +79,22 @@ export class CartComponent implements OnInit {
   }
 
   placeOrder() {
-    this.orderDetails = this.customerFormGroup.value;
-    this.orderService.placeOrder(this.orderDetails).subscribe(reponse => {
-      console.log(reponse)
-      this.route.navigateByUrl("order");
-    })
 
+    this.cart.forEach((element:any) => {
+      this.customerFormGroup.patchValue({
+        bookId: element.bookModel.bookId,
+        userId: element.userModel.userId,
+        orderQuantity: element.bookModel.bookQuantity,
+        orderPrice: element.bookModel.bookPrice,
+      });
+      this.orderDetails = this.customerFormGroup.value;
+    
+      this.orderService.placeOrder(this.orderDetails).subscribe(reponse => {
+        console.log(reponse)
+        this.removeFromCart(element.cartId);
+        this.route.navigateByUrl("order");
+      });
+    });
   }
 
 }
